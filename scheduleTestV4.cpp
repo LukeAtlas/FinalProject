@@ -1,8 +1,12 @@
 #include <iostream>
+#include <fstream>
 #include <algorithm>
 #include <vector>
 #include <string>
 #include <math.h>
+#include <stdio.h>
+#include <conio.h>
+#include <Python.h>
 
 using namespace std;
 
@@ -367,6 +371,8 @@ double dayParse(string myDay) {
 }
 
 void printSched(vector<vector<int>> schedules, vector<Course> myCourses, vector<vector<vector<int>>> subGroups) {
+    ofstream myfile;
+    myfile.open ("thesched.txt", std::ofstream::trunc);
     for (int i=0;i<schedules.size();i++) {
         cout << "Schedule " << (i+1) << ":" << endl;
         for (int j=0;j<myCourses.size();j++) {
@@ -397,6 +403,7 @@ void printSched(vector<vector<int>> schedules, vector<Course> myCourses, vector<
         }
         cout << endl << endl;
     }
+    myfile.close();
 }
 
 // n!/(r!(n-r)!)

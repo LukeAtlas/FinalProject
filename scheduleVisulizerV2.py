@@ -51,17 +51,24 @@ def classAdder():
 # for ()
 
 str = "math: 1,2,3 | 2,3,4 | 4,5,6 | "
-endInd = str.find(':')
-name = str[0:endInd]
-endInd = endInd - 1
-print(name)
-startInd = 0
-print(len(str))
-while ((endInd + 3) < len(str)):
-    startInd = endInd + 3
-    endInd = str.find('|',startInd) - 1
-    print(str[startInd:endInd])
-classAdder()
+file1 = open('myfile.txt', 'r') 
+Lines = file1.readlines() 
+
+count = 0
+# Strips the newline character 
+for line in Lines: 
+    print("{}".format(line.strip())) 
+    endInd = str.find(':')
+    name = str[0:endInd]
+    endInd = endInd - 1
+    print(name)
+    startInd = 0
+    print(len(str))
+    while ((endInd + 3) < len(str)):
+        startInd = endInd + 3
+        endInd = str.find('|',startInd) - 1
+        print(str[startInd:endInd])
+    classAdder()
 def backButton():
    print("back")
 
