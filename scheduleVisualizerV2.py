@@ -26,7 +26,8 @@ schedArea.create_image(20, 20, anchor=NW, image=img2)
 bg = root.cget("background")
 myBg = schedArea.create_rectangle(900, 0, 1000, 1080,fill=bg,width=0) # day width = 107 px, hour height = 48 px
 
-def classAdder(dNum,sTime,eTime):
+def classAdder(infoStr):
+    
     # dNum = 4
     # sTime = 16
     # eTime = 17.30
@@ -57,22 +58,25 @@ Lines = myFile.readlines()
 # Strips the newline character 
 for line in Lines: 
     str = line.strip()
+    if ((str.find('Schedule')==-1) and (str!="")):
+        # while (str!=""):
+        # str = line.strip()
+        # print("oof: " + str)
+        # print("Line {}: {}".format(count, str)) 
+        # count= count+1
+        endInd = str.find(':')
+        name = str[0:endInd]
+        endInd = endInd - 1
+        print(name)
+        startInd = 0
+        print(len(str))
+        while ((endInd + 3) < len(str)):
+            startInd = endInd + 3
+            endInd = str.find('|',startInd) - 1
+            classAdder(str[startInd:endInd])
+        # classAdder()
     if (str==""):
-        print("its empty :/")
         break
-    # print("Line {}: {}".format(count, str)) 
-    # count= count+1
-    endInd = str.find(':')
-    name = str[0:endInd]
-    endInd = endInd - 1
-    print(name)
-    startInd = 0
-    print(len(str))
-    while ((endInd + 3) < len(str)):
-        startInd = endInd + 3
-        endInd = str.find('|',startInd) - 1
-        print(str[startInd:endInd])
-    classAdder()
 
 def backButton():
    print("back")
@@ -94,7 +98,7 @@ root.mainloop()
 # print(len(str))
 # print(num)
 
-# old (1,1) = (104,211,91,139)
+# schedule day cell coordinates (x1,y1,x2,y2)
 # (1,1) = (103, 90, 212, 139)
 # (4,7) = (430, 388, 540, 437)
 # (2,15) = (212, 784, 321, 834)

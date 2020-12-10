@@ -1,49 +1,49 @@
 Schedule 1:
-math lecture A1 1,8,9 |
-math lab L2 3,8.3,9.3 |
-history lecture B2 2,13,14 |
-history lab H1 4,8,9 |
-history discussion d1 5,8,9 |
+math lecture A1: 1,8,9 |
+math lab L2: 3,8.3,9.3 |
+history lecture B2: 2,13,14 |
+history lab H1: 4,8,9 |
+history discussion d1: 5,8,9 |
 
 
 Schedule 2:
-math lecture A1 1,8,9 |
-math lab L2 3,8.3,9.3 |
-history lecture B2 2,13,14 |
-history lab H2 2,6,9 |
-history discussion d1 5,8,9 |
+math lecture A1: 1,8,9 |
+math lab L2: 3,8.3,9.3 |
+history lecture B2: 2,13,14 |
+history lab H2: 2,6,9 |
+history discussion d1: 5,8,9 |
 
 
 Schedule 3:
-math lecture A1 1,8,9 |
-math lab L3 2,7.3,8.3 |
-history lecture B2 2,13,14 |
-history lab H1 4,8,9 |
-history discussion d1 5,8,9 |
+math lecture A1: 1,8,9 |
+math lab L3: 2,7.3,8.3 |
+history lecture B2: 2,13,14 |
+history lab H1: 4,8,9 |
+history discussion d1: 5,8,9 |
 
 
 Schedule 4:
-math lecture A2 2,8,9 |
-math lab L2 2,8.3,9.3 |
-history lecture B2 2,13,14 |
-history lab H1 4,8,9 |
-history discussion d1 5,8,9 |
+math lecture A2: 2,8,9 |
+math lab L2: 2,8.3,9.3 |
+history lecture B2: 2,13,14 |
+history lab H1: 4,8,9 |
+history discussion d1: 5,8,9 |
 
 
 Schedule 5:
-math lecture A2 2,8,9 |
-math lab L2 3,8.3,9.3 |
-history lecture B1 1,8.45,9 |
-history lab H1 4,8,9 |
-history discussion d1 5,8,9 |
+math lecture A2: 2,8,9 |
+math lab L2: 3,8.3,9.3 |
+history lecture B1: 1,8.45,9 |
+history lab H1: 4,8,9 |
+history discussion d1: 5,8,9 |
 
 
 Schedule 6:
-math lecture A2 2,8,9 |
-math lab L2 3,8.3,9.3 |
-history lecture B2 2,13,14 |
-history lab H1 4,8,9 |
-history discussion d1 5,8,9 |
+math lecture A2: 2,8,9 |
+math lab L2: 3,8.3,9.3 |
+history lecture B2: 2,13,14 |
+history lab H1: 4,8,9 |
+history discussion d1: 5,8,9 |
 
 
 
