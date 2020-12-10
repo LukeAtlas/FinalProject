@@ -4,9 +4,9 @@
 #include <vector>
 #include <string>
 #include <math.h>
-#include <stdio.h>
-#include <conio.h>
-#include <Python.h>
+// #include <stdio.h>
+// #include <conio.h>
+// #include <Python.h>
 
 using namespace std;
 
@@ -59,6 +59,22 @@ Course addCourse();
 void isPossible(vector<Course> theCourses);
 
 int main() {
+    // PyObject* pInt;
+
+	// Py_Initialize();
+
+	// PyRun_SimpleString("print('Hello World from Embedded Python!!!')");
+	
+	// Py_Finalize();
+
+	// printf("\nPress any key to exit...\n");
+	// if(!_getch()) _getch();
+    // char filename[] = "scheduleVisualizerV2.py";
+	// FILE* fp;
+	// Py_Initialize();
+	// fp = _Py_fopen(filename, "r");
+	// PyRun_SimpleFile(fp, filename);
+	// Py_Finalize();
     string myExit;
     bool isdone = 0;
     vector<Course> allCourses;
@@ -371,10 +387,10 @@ double dayParse(string myDay) {
 }
 
 void printSched(vector<vector<int>> schedules, vector<Course> myCourses, vector<vector<vector<int>>> subGroups) {
-    ofstream myfile;
-    myfile.open ("thesched.txt", std::ofstream::trunc);
+    ofstream myFile;
+    myFile.open ("thesched.txt", std::ofstream::trunc);
     for (int i=0;i<schedules.size();i++) {
-        cout << "Schedule " << (i+1) << ":" << endl;
+        myFile << "Schedule " << (i+1) << ":" << endl;
         for (int j=0;j<myCourses.size();j++) {
             int subOffset = 0;
             if (j>0) {
@@ -391,19 +407,19 @@ void printSched(vector<vector<int>> schedules, vector<Course> myCourses, vector<
                 }
                 int sectNum = subGroups[j][groupNum][v]-1-sectOffset;
                 int timeCount = myCourses[j].subs[v].sects[sectNum].times.size();
-                cout << myCourses[j].Name << " " << myCourses[j].subs[v].Name;
-                cout << " " << myCourses[j].subs[v].sects[sectNum].Name << ": ";
+                myFile << myCourses[j].Name << " " << myCourses[j].subs[v].Name;
+                myFile << " " << myCourses[j].subs[v].sects[sectNum].Name << ": ";
                 for (int c=0;c<timeCount;c++) {
-                    cout << myCourses[j].subs[v].sects[sectNum].times[c][0] << ",";
-                    cout << myCourses[j].subs[v].sects[sectNum].times[c][1] << ",";
-                    cout << myCourses[j].subs[v].sects[sectNum].times[c][2] << " | ";
+                    myFile << myCourses[j].subs[v].sects[sectNum].times[c][0] << ",";
+                    myFile << myCourses[j].subs[v].sects[sectNum].times[c][1] << ",";
+                    myFile << myCourses[j].subs[v].sects[sectNum].times[c][2] << " | ";
                 }
-                cout << endl;
+                myFile << endl;
             }
         }
-        cout << endl << endl;
+        myFile << endl << endl;
     }
-    myfile.close();
+    myFile.close();
 }
 
 // n!/(r!(n-r)!)

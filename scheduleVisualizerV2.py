@@ -26,10 +26,10 @@ schedArea.create_image(20, 20, anchor=NW, image=img2)
 bg = root.cget("background")
 myBg = schedArea.create_rectangle(900, 0, 1000, 1080,fill=bg,width=0) # day width = 107 px, hour height = 48 px
 
-def classAdder():
-    dNum = 4
-    sTime = 16
-    eTime = 17.30
+def classAdder(dNum,sTime,eTime):
+    # dNum = 4
+    # sTime = 16
+    # eTime = 17.30
     x_0 = 109*(dNum-1) + xMargin + ((dNum-1)*0.17)
     x_1 = x_0 + 109
     sMins = (sTime - math.floor(sTime))*100 # start time minutes
@@ -50,14 +50,18 @@ def classAdder():
 
 # for ()
 
-str = "math: 1,2,3 | 2,3,4 | 4,5,6 | "
-file1 = open('myfile.txt', 'r') 
-Lines = file1.readlines() 
-
-count = 0
+# str = "math: 1,2,3 | 2,3,4 | 4,5,6 | "
+myFile = open('thesched.txt', 'r') 
+Lines = myFile.readlines() 
+# count = 1
 # Strips the newline character 
 for line in Lines: 
-    print("{}".format(line.strip())) 
+    str = line.strip()
+    if (str==""):
+        print("its empty :/")
+        break
+    # print("Line {}: {}".format(count, str)) 
+    # count= count+1
     endInd = str.find(':')
     name = str[0:endInd]
     endInd = endInd - 1
@@ -69,6 +73,7 @@ for line in Lines:
         endInd = str.find('|',startInd) - 1
         print(str[startInd:endInd])
     classAdder()
+
 def backButton():
    print("back")
 
