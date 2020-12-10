@@ -27,10 +27,12 @@ bg = root.cget("background")
 myBg = schedArea.create_rectangle(900, 0, 1000, 1080,fill=bg,width=0) # day width = 107 px, hour height = 48 px
 
 def classAdder(infoStr):
-    
-    # dNum = 4
-    # sTime = 16
-    # eTime = 17.30
+    # print('adder: '+infoStr)
+    dEnd = infoStr.find(',')
+    dNum = float(infoStr[0:dEnd])
+    sEnd = infoStr.find(',',(dEnd+1))
+    sTime = float(infoStr[(dEnd+1):sEnd])
+    eTime = float(infoStr[(sEnd+1):])
     x_0 = 109*(dNum-1) + xMargin + ((dNum-1)*0.17)
     x_1 = x_0 + 109
     sMins = (sTime - math.floor(sTime))*100 # start time minutes
@@ -44,7 +46,8 @@ def classAdder(infoStr):
     print(y_0)
     print(x_1)
     print(y_1)
-    id2 = schedArea.create_rectangle(x_0, y_0, x_1, y_1,fill="blue") # day width = 107 px, hour height = 48 px
+    schedArea.create_rectangle(x_0, y_0, x_1, y_1,fill="blue") # day width = 107 px, hour height = 48 px
+
     # id2 = schedArea.create_rectangle(758, 586, 867, 635,fill="blue") # day width = 107 px, hour height = 48 px
 
 # id = schedArea.create_rectangle(103, 90, 212, 139,fill="blue")
